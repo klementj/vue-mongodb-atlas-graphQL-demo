@@ -5,8 +5,8 @@ specifiers:
   graphql: ^16.6.0
   realm-web: ^1.7.1
   villus: ^2.0.0
-  vite: ^3.1.0
-  vue: ^3.2.37
+  vite: ^3.1.3
+  vue: ^3.2.39
 
 dependencies:
   graphql: 16.6.0
