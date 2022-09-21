@@ -2,25 +2,15 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
+import RegisterUser from './components/RegisterUser.vue';
 
-import { useClient } from 'villus'
-import * as Realm from 'realm-web'
 
-useClient({
-  url: import.meta.env.VITE_SWAPI_URL
-})
-
-const realmApp = new Realm.App({ id: import.meta.env.VITE_REALM_ID });
-const credentials = Realm.Credentials.anonymous();
-try {
-  const user = await realmApp.logIn(credentials);
-  console.log(user)
-} catch(err) {
-  console.error("Failed to log in", err);
-}
 </script>
 
 <template>
+    <Suspense>
+      <RegisterUser />
+    </Suspense>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -29,7 +19,9 @@ try {
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Suspense>
+    <HelloWorld msg="Vite + Vue" />
+  </Suspense>
 </template>
 
 <style scoped>
