@@ -12,7 +12,8 @@
     "graphql": "^16.6.0",
     "realm-web": "^1.7.1",
     "villus": "^2.0.0",
-    "vue": "^3.2.39"
+    "vue": "^3.2.39",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",

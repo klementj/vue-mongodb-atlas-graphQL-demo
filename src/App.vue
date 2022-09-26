@@ -2,14 +2,23 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
-import RegisterUser from './components/RegisterUser.vue';
+import Login from './components/Login.vue';
+import CreateAccount from './components/CreateAccount.vue';
 
 
 </script>
 
 <template>
+  <Suspense>
+    <router-view></router-view>
+
+  </Suspense>
     <Suspense>
-      <RegisterUser />
+      <CreateAccount />
+    </Suspense>
+
+    <Suspense>
+      <Login />
     </Suspense>
   <div>
     <a href="https://vitejs.dev" target="_blank">
